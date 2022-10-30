@@ -5,7 +5,7 @@ module Api
     def validate
       @coupon = Coupon.find_by(pin: permitted_params[:pin])
 
-      return not_found unless @coupon
+      return not_found('Промокод не найден') unless @coupon
 
       if @coupon.apply
         render json: { success: true }, status: 200
