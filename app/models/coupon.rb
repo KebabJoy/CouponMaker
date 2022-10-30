@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Coupon < ApplicationRecord
-  validates_uniqueness_of :pin
   validates_presence_of :expiration_date, :uses_left, :pin
   validates :uses_left, numericality: { greater_than_or_equal_to: 0 }
 
