@@ -7,12 +7,10 @@ module Api
 
       return not_found unless @coupon
 
-      @coupon.apply
-
-      if @coupon.save
+      if @coupon.apply
         render json: { success: true }, status: 200
       else
-        render json: { success: false, message: @coupon.errors.full_messages }, status: 400
+        render json: { success: false, message: @coupon.errors.messages.values.flatten }, status: 400
       end
     end
 

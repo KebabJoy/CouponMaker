@@ -18,7 +18,7 @@ class Coupon < ApplicationRecord
       self.uses_left -= 1
     end
 
-    if (last_usage - Time.zone.now).abs < 15.minutes
+    if last_usage && (last_usage - Time.zone.now).abs < 15.minutes
       errors.add(:expiration_date, 'Попробуйте позже')
       return false
     else
