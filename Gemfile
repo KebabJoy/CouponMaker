@@ -29,10 +29,10 @@ group :development do
 end
 
 group :development do
-  gem 'capistrano', '3.5.0'
+  gem 'capistrano', '3.7.0'
   gem 'capistrano-rvm'
   gem 'capistrano-nginx'
-  gem 'capistrano3-puma'
+  gem "capistrano3-puma", "6.0.0.alpha.1"
   gem 'capistrano-rails'
   gem 'capistrano-rails-db'
   gem 'capistrano-rails-console'

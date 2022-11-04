@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.5.0"
+lock "~> 3.7.0"
 
 set :application, "CouponMaker"
 set :repo_url, "https://github.com/KebabJoy/CouponMaker.git"
@@ -22,8 +22,9 @@ set :puma_conf, "#{shared_path}/config/puma.rb"
 
 namespace :deploy do
   before 'check:linked_files', 'config:push'
-  before 'check:linked_files', 'puma:config'
-  before 'check:linked_files', 'puma:nginx_config'
+  # before 'check:linked_files', 'puma:config'
+  # before 'check:linked_files', 'puma:nginx_config'
   before 'deploy:migrate', 'deploy:db:create'
   after 'puma:smart_restart', 'nginx:restart'
 end
+
