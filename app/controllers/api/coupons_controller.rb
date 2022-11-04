@@ -3,7 +3,7 @@
 module Api
   class CouponsController < BaseController
     def validate
-      @coupon = Coupon.find_by(pin: permitted_params[:pin].uppercase)
+      @coupon = Coupon.find_by(pin: permitted_params[:pin].upcase)
 
       return not_found('Промокод не найден') unless @coupon
 
