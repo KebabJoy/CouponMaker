@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: CouponMaker_production
-  username: CouponMaker
-  password: <%= ENV['COUPONMAKER_DATABASE_PASSWORD'] %>
+  username: root
+  password: ''
