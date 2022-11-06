@@ -8,7 +8,7 @@ module Api
       return not_found('Промокод не найден') unless @coupon
 
       if @coupon.apply
-        render json: { success: true }, status: 200
+        render json: { success: true, uses_left: @coupon.uses_left }, status: 200
       else
         render json: { success: false, message: @coupon.errors.messages.values.flatten }, status: 400
       end
